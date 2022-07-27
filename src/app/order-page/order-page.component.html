@@ -1,0 +1,59 @@
+<ng-container *ngIf="itemAdded.length != 0">
+    <div class="container">
+            <div class="row">
+                <div class="col-12 mt-3">
+                    <div class="cart-item" style="overflow-x:auto;">
+                        <table class="table table-responsive">
+                            <thead>
+                                <tr>
+                                    <th>S.No</th>
+                                    <th>Item Name</th>
+                                    <th>Quantity</th>
+                                    <th>Price</th>
+                                    <th>Date & Time</th>
+                                    <th>Total</th>
+                                    <th>Remove</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let item of itemAdded; let i=index">
+                                    <td>{{i+1}}</td>
+                                    <td>{{item.itemname}}</td>
+                                    <td>{{item.quantity}}</td>
+                                    <td>{{item.price}}</td>
+                                    <td>{{item.date | date: 'medium'}}</td>
+                                    <td>{{item.quantity * item.price | number}}</td>
+                                    <td>
+                                        <button (click)="removeItem(item, i)" class="btn btn-danger delete"><i class="fas fa-trash-alt" aria-hidden="true"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4"></td> 
+                                    <td><button class="btn btn-success" >Checkout</button></td>
+                                    <td><strong>Grand Total : <i class="fa fa-inr rupee"></i></strong>{{grandTotal}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+    </div>   
+</ng-container>
+
+<ng-container *ngIf="itemAdded.length == 0">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-title">My Cart</div>
+                </div>
+                <div class="center">
+                    <img src="https://media.istockphoto.com/vectors/pizza-delivery-with-shopping-cart-logo-vector-id1283446746?k=20&m=1283446746&s=170667a&w=0&h=_GzwRl8ermmwgAORzjsC8zlI3-9zrQXzre90DocKHDA=" alt="">
+                    <h4>Your cart is empty!</h4>
+                    <h6>Add items to it now</h6>
+                    <button routerLink="/menu-page" class="btn btn-primary">Shop now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>

@@ -1,0 +1,114 @@
+<div class="wrapper">
+    <div class="container mb-5 ">
+        <h3 class="heading">MENU CARD</h3><hr>
+        <h4 class="sub-heading">TIFFINS</h4>
+        <div class="row">
+            <div class="col-md-3 col-12 mb-3 mt-3" *ngFor="let food of tiffinsDetails; let i=index">
+                <div class="card shadow">
+                    <img class="image" src="{{food.image}}" alt="{{food.itemname}}">
+                    <div class="card-body" >
+                        <h5 class="itemname"><strong>Item Name: </strong>{{food.itemname}}</h5>
+                        <h6><strong>Type: </strong>{{food.type}}</h6>
+                        <h6><strong>Cuisine: </strong>{{food.cuisine}}</h6>
+                        <h6><strong>Availability: </strong>{{food.availability}}</h6><br>
+                        <h6><strong> Price: </strong><i class="fa fa-inr rupee"></i>{{food.price}}</h6> 
+                        <div>
+                            <button type="button" class="btn quantity-btn" (click)="minus(i)"><i class="fa fa-minus"></i></button>&nbsp;
+                            <span class="quantity-num">{{food.quantity}}</span>&nbsp;
+                            <button type="button" class="btn quantity-btn" (click)="plus(i)"><i class="fa fa-plus"></i></button>
+                        </div>
+                        <button class="btn add-btn mt-3" (click)="addItemsToCart(food)">Add  to cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h4 class="sub-heading mt-5">VEGETARIAN</h4>
+        <div class="row">
+            <div class="col-md-3 col-12 mb-3 mt-3" *ngFor="let food of vegetarianDetails; let i=index">
+                <div class="card">
+                    <img class="image" src="{{food.image}}" alt="{{food.itemname}}">
+                    <div class="card-body" >
+                        <h5 class="itemname"  data-toggle="tooltip" data-placement="top" title="{{food.itemname}}"><strong>Item Name: </strong>{{food.itemname}}</h5>
+                        <h6><strong>Type: </strong>{{food.type}}</h6>
+                        <h6><strong>Cuisine: </strong>{{food.cuisine}}</h6>
+                        <h6><strong>Availability: </strong>{{food.availability}}</h6><br>
+                        <h6><strong> Price: </strong><i class="fa fa-inr rupee"></i>{{food.price}}</h6> 
+                        <div>
+                            <button type="button" class="btn quantity-btn" (click)="minus1(i)"><i class="fa fa-minus"></i></button>&nbsp;
+                            <span class="quantity-num">{{food.quantity}}</span>&nbsp;
+                            <button type="button" class="btn quantity-btn" (click)="plus1(i)"><i class="fa fa-plus"></i></button>
+                        </div>
+                        <button class="btn add-btn mt-3" (click)="addItemsToCart(food)">Add  to cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h4 class="sub-heading mt-5">NON-VEGETARIAN</h4>
+        <div class="row">
+            <div class="col-md-3 col-12 mb-3 mt-3" *ngFor="let food of nonvegDetails; let i=index">
+                <div class="card">
+                    <img class="image" src="{{food.image}}" alt="{{food.itemname}}">
+                    <div class="card-body" >
+                        <h5 class="itemname" data-toggle="tooltip" data-placement="top" title="{{food.itemname}}"><strong>Item Name: </strong >{{food.itemname}}</h5>
+                        <h6><strong>Type: </strong>{{food.type}}</h6>
+                        <h6><strong>Cuisine: </strong>{{food.cuisine}}</h6>
+                        <h6><strong>Availability: </strong>{{food.availability}}</h6><br>
+                        <h6><strong> Price: </strong><i class="fa fa-inr rupee"></i>{{food.price}}</h6> 
+                        <div>
+                            <button type="button" class="btn quantity-btn" (click)="minus2(i)"><i class="fa fa-minus"></i></button>&nbsp;
+                            <span class="quantity-num">{{food.quantity}}</span>&nbsp;
+                            <button type="button" class="btn quantity-btn" (click)="plus2(i)"><i class="fa fa-plus"></i></button>
+                        </div>
+                        <button class="btn add-btn mt-3" (click)="addItemsToCart(food)">Add  to cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+    <footer class="bg-light">
+        <div class="container">
+            <h2 class="footer-header mb-4">Food Order</h2>
+            <div class="row">
+                <div class="col-md-3 col-12 mb-5">
+                    <h6 class="mb-3">ABOUT FOOD ORDER</h6>
+                    <span class="text-muted ">Who We Are</span><br>
+                    <span class="text-muted">Blog</span><br>
+                    <span class="text-muted">Work With Us</span><br>
+                    <span class="text-muted">Report</span>
+                </div>
+                <div class="col-md-3 col-12 mb-5">
+                    <h6 class="mb-3">FOR RESTAURANTS</h6>
+                    <span class="text-muted ">Partner With Us</span><br>
+                    <span class="text-muted">Apps For You</span>
+                </div>
+                <div class="col-md-3 col-12 mb-5">
+                    <h6 class="mb-3">LEARN MORE</h6>
+                    <span class="text-muted ">Privacy</span><br>
+                    <span class="text-muted">Security</span><br>
+                    <span class="text-muted">Terms</span><br>
+                    <span class="text-muted">Sitemap</span>
+                </div>
+                <div class="col-md-3 col-12 mb-5">
+                    <h6 class="mb-3">SOCIAL LINKS</h6>
+                    <div class="row media">
+                        <div class="col-md-1 col-1">
+                            <a href=""><i class="fa fa-linkedin linkedin" aria-hidden="true"></i></a>
+                        </div>
+                        <div class="col-md-1 col-1 ">
+                            <a href=""><i class="fa fa-twitter twitter" aria-hidden="true"></i></a>
+                        </div>
+                        <div class="col-md-1 col-1 ">
+                            <a href=""><i class="fa fa-instagram instagram" aria-hidden="true"></i></a>
+                        </div>
+                        <div class="col-md-1 col-1 ">
+                            <a href=""><i class="fa fa-facebook facebook" aria-hidden="true"></i></a>
+                        </div>
+                        <div class="col-md-1 col-1 ">
+                            <a href=""><i class="fa fa-youtube youtube" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
